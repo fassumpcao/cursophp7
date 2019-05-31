@@ -1,0 +1,21 @@
+<?php
+$hoje = new DateTime();
+$hoje = $hoje->format("d/m/Y H:i:s");
+$images = scandir("images");
+
+$data = array();
+
+foreach ($images as $img) {
+    if(!in_array($img, array(".", ".."))){
+        $filename = "images" . DIRECTORY_SEPARATOR . $img;
+        $info = pathinfo($filename);
+        $info["size"] = filesize($filename);
+        $info["modified"] = date("d/m/Y H:i:s", filemtime($filename));
+        $info["url"] = "http://localhost/hcode/DIR/" . str_replace("\\", "/", $filename);
+        //$info["hoje"] = $hoje;
+        array_push($data, $info);
+    }
+}
+
+echo json_encode($data);
+ ?>
