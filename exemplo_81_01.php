@@ -4,6 +4,7 @@ $image = imagecreatefromjpeg("certificado.jpg");
 
 $titleColor = imagecolorallocate($image, 0, 0, 0);
 $gray = imagecolorallocate($image, 100, 100, 100);
+
 //echo  __DIR__ . DIRECTORY_SEPARATOR . "Bevan" . DIRECTORY_SEPARATOR . "Bevan-Regular.ttf";
 imagettftext($image, 32, 0, 320, 150, $titleColor, __DIR__ . DIRECTORY_SEPARATOR ."fonts" . DIRECTORY_SEPARATOR . "Bevan-Regular.ttf", "CERTIFICADO");
 imagettftext($image, 32, 0, 370, 350, $titleColor, __DIR__ . DIRECTORY_SEPARATOR. "fonts" . DIRECTORY_SEPARATOR . "Playball-Regular.ttf", utf8_decode("Felipe Assumpção"));
